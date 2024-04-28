@@ -34,9 +34,13 @@ function dibujarRectaHorizontal() {
     if (!canvas.getContext) return;
 
     const ctx = canvas.getContext('2d');
+    const longitud = canvas.width * 0.4;  // 40% de la anchura del canvas
+    const startX = (canvas.width - longitud) / 2;
+    const endX = startX + longitud;
+
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.beginPath();
-    ctx.moveTo(0, canvas.height / 2);
-    ctx.lineTo(canvas.width, canvas.height / 2);
+    ctx.moveTo(startX, canvas.height / 2);
+    ctx.lineTo(endX, canvas.height / 2);
     ctx.stroke();
 }
-
